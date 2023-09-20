@@ -6,5 +6,11 @@ namespace HeroTasker
         {
             InitializeComponent();
         }
+        static void UpdateTextBox (string text)
+        {
+            text = "Test";
+
+            
+        }
     }
 }
