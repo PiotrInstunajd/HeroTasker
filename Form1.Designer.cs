@@ -35,18 +35,22 @@
             label2 = new Label();
             label3 = new Label();
             textBox1 = new TextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // checkedListBox1
             // 
+            checkedListBox1.BackColor = Color.FromArgb(128, 64, 0);
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Location = new Point(12, 101);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(190, 418);
             checkedListBox1.TabIndex = 0;
+            checkedListBox1.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
             // 
             // checkedListBox2
             // 
+            checkedListBox2.BackColor = Color.FromArgb(128, 64, 0);
             checkedListBox2.FormattingEnabled = true;
             checkedListBox2.Location = new Point(208, 101);
             checkedListBox2.Name = "checkedListBox2";
@@ -55,6 +59,7 @@
             // 
             // checkedListBox3
             // 
+            checkedListBox3.BackColor = Color.FromArgb(128, 64, 0);
             checkedListBox3.FormattingEnabled = true;
             checkedListBox3.Location = new Point(629, 101);
             checkedListBox3.Name = "checkedListBox3";
@@ -93,16 +98,30 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(299, 20);
+            textBox1.Location = new Point(91, 530);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 6;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(10, 530);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 7;
+            button1.Text = "+";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(831, 569);
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = Color.FromArgb(117, 58, 19);
+            ClientSize = new Size(831, 565);
+            Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -110,6 +129,7 @@
             Controls.Add(checkedListBox3);
             Controls.Add(checkedListBox2);
             Controls.Add(checkedListBox1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -125,5 +145,6 @@
         private Label label2;
         private Label label3;
         private TextBox textBox1;
+        private Button button1;
     }
 }
