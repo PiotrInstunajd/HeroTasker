@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            checkedListBox1 = new CheckedListBox();
-            checkedListBox2 = new CheckedListBox();
-            checkedListBox3 = new CheckedListBox();
+            ToDoList = new CheckedListBox();
+            InProgressList = new CheckedListBox();
+            DoneList = new CheckedListBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             textBox1 = new TextBox();
-            button1 = new Button();
+            AddButton = new Button();
             SuspendLayout();
             // 
-            // checkedListBox1
+            // ToDoList
             // 
-            checkedListBox1.BackColor = Color.FromArgb(128, 64, 0);
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(12, 101);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(190, 418);
-            checkedListBox1.TabIndex = 0;
-            checkedListBox1.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
+            ToDoList.BackColor = Color.FromArgb(128, 64, 0);
+            ToDoList.FormattingEnabled = true;
+            ToDoList.Location = new Point(12, 101);
+            ToDoList.Name = "ToDoList";
+            ToDoList.Size = new Size(190, 418);
+            ToDoList.TabIndex = 0;
+            ToDoList.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
             // 
-            // checkedListBox2
+            // InProgressList
             // 
-            checkedListBox2.BackColor = Color.FromArgb(128, 64, 0);
-            checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Location = new Point(208, 101);
-            checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new Size(415, 418);
-            checkedListBox2.TabIndex = 1;
+            InProgressList.BackColor = Color.FromArgb(128, 64, 0);
+            InProgressList.FormattingEnabled = true;
+            InProgressList.Location = new Point(208, 101);
+            InProgressList.Name = "InProgressList";
+            InProgressList.Size = new Size(415, 418);
+            InProgressList.TabIndex = 1;
             // 
-            // checkedListBox3
+            // DoneList
             // 
-            checkedListBox3.BackColor = Color.FromArgb(128, 64, 0);
-            checkedListBox3.FormattingEnabled = true;
-            checkedListBox3.Location = new Point(629, 101);
-            checkedListBox3.Name = "checkedListBox3";
-            checkedListBox3.Size = new Size(190, 418);
-            checkedListBox3.TabIndex = 2;
+            DoneList.BackColor = Color.FromArgb(128, 64, 0);
+            DoneList.FormattingEnabled = true;
+            DoneList.Location = new Point(629, 101);
+            DoneList.Name = "DoneList";
+            DoneList.Size = new Size(190, 418);
+            DoneList.TabIndex = 2;
             // 
             // label1
             // 
@@ -104,15 +104,15 @@
             textBox1.TabIndex = 6;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // button1
+            // AddButton
             // 
-            button1.Location = new Point(10, 530);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 7;
-            button1.Text = "+";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            AddButton.Location = new Point(10, 530);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(75, 23);
+            AddButton.TabIndex = 7;
+            AddButton.Text = "+";
+            AddButton.UseVisualStyleBackColor = true;
+            AddButton.Click += button1_Click;
             // 
             // Form1
             // 
@@ -121,14 +121,14 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(117, 58, 19);
             ClientSize = new Size(831, 565);
-            Controls.Add(button1);
+            Controls.Add(AddButton);
             Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(checkedListBox3);
-            Controls.Add(checkedListBox2);
-            Controls.Add(checkedListBox1);
+            Controls.Add(DoneList);
+            Controls.Add(InProgressList);
+            Controls.Add(ToDoList);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
             Text = "Form1";
@@ -138,13 +138,13 @@
 
         #endregion
 
-        private CheckedListBox checkedListBox1;
-        private CheckedListBox checkedListBox2;
-        private CheckedListBox checkedListBox3;
+        private CheckedListBox ToDoList;
+        private CheckedListBox InProgressList;
+        private CheckedListBox DoneList;
         private Label label1;
         private Label label2;
         private Label label3;
         private TextBox textBox1;
-        private Button button1;
+        private Button AddButton;
     }
 }
