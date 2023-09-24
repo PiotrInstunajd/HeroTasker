@@ -4,18 +4,33 @@ namespace HeroTasker
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+
+
         }
 
         public void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InProgressList.Items.Add(ToDoList.SelectedItem);
+            ToDoList.GetItemChecked(InProgressList.Items.Add(ToDoList.SelectedItem));
+
+            
+            //this.BeginInvoke(new Action(() =>
+            //{
+            //    InProgressList.Items.Add(ToDoList.SelectedItem);
+                
+            //}));
+            
         }
 
         public void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //checkedListBox3.Items.Add(this.checkedListBox2.Text);
-        }
+                if (InProgressList.Items.Count > )
+                InProgressList.Items.Remove(InProgressList.SelectedItem);
+
+
+
+                //checkedListBox3.Items.Add(this.checkedListBox2.Text);
+            }
 
         public void checkedListBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
