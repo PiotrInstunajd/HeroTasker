@@ -36,6 +36,7 @@
             label3 = new Label();
             textBox1 = new TextBox();
             AddButton = new Button();
+            testLabel = new Label();
             SuspendLayout();
             // 
             // ToDoList
@@ -114,6 +115,15 @@
             AddButton.UseVisualStyleBackColor = true;
             AddButton.Click += button1_Click;
             // 
+            // testLabel
+            // 
+            testLabel.AutoSize = true;
+            testLabel.Location = new Point(277, 525);
+            testLabel.Name = "testLabel";
+            testLabel.Size = new Size(38, 15);
+            testLabel.TabIndex = 8;
+            testLabel.Text = "label4";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -121,6 +131,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(117, 58, 19);
             ClientSize = new Size(831, 565);
+            Controls.Add(testLabel);
             Controls.Add(AddButton);
             Controls.Add(textBox1);
             Controls.Add(label3);
@@ -146,5 +157,6 @@
         private Label label3;
         private TextBox textBox1;
         private Button AddButton;
+        private Label testLabel;
     }
 }
