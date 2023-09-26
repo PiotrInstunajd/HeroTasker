@@ -47,7 +47,7 @@
             ToDoList.Name = "ToDoList";
             ToDoList.Size = new Size(190, 418);
             ToDoList.TabIndex = 0;
-            ToDoList.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
+            ToDoList.SelectedIndexChanged += ToDoList_SelectedIndexChanged;
             // 
             // InProgressList
             // 
@@ -57,6 +57,7 @@
             InProgressList.Name = "InProgressList";
             InProgressList.Size = new Size(415, 418);
             InProgressList.TabIndex = 1;
+            InProgressList.SelectedIndexChanged += InProgressList_SelectedIndexChanged;
             // 
             // DoneList
             // 
@@ -66,6 +67,7 @@
             DoneList.Name = "DoneList";
             DoneList.Size = new Size(190, 418);
             DoneList.TabIndex = 2;
+            DoneList.SelectedIndexChanged += DoneList_SelectedIndexChanged;
             // 
             // label1
             // 
