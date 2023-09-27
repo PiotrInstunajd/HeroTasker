@@ -8,7 +8,6 @@ namespace HeroTasker
             ToDoList.CheckOnClick = true;
             InProgressList.CheckOnClick = true;
             DoneList.CheckOnClick = true;
-
         }
         public void button1_Click(object sender, EventArgs e)
         {
