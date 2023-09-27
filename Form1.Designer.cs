@@ -30,13 +30,13 @@
         {
             ToDoList = new CheckedListBox();
             InProgressList = new CheckedListBox();
-            DoneList = new CheckedListBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             textBox1 = new TextBox();
             AddButton = new Button();
             testLabel = new Label();
+            DoneList = new CheckedListBox();
             SuspendLayout();
             // 
             // ToDoList
@@ -45,7 +45,7 @@
             ToDoList.FormattingEnabled = true;
             ToDoList.Location = new Point(12, 101);
             ToDoList.Name = "ToDoList";
-            ToDoList.Size = new Size(190, 418);
+            ToDoList.Size = new Size(190, 400);
             ToDoList.TabIndex = 0;
             ToDoList.SelectedIndexChanged += ToDoList_SelectedIndexChanged;
             // 
@@ -55,19 +55,9 @@
             InProgressList.FormattingEnabled = true;
             InProgressList.Location = new Point(208, 101);
             InProgressList.Name = "InProgressList";
-            InProgressList.Size = new Size(415, 418);
+            InProgressList.Size = new Size(415, 400);
             InProgressList.TabIndex = 1;
             InProgressList.SelectedIndexChanged += InProgressList_SelectedIndexChanged;
-            // 
-            // DoneList
-            // 
-            DoneList.BackColor = Color.FromArgb(128, 64, 0);
-            DoneList.FormattingEnabled = true;
-            DoneList.Location = new Point(629, 101);
-            DoneList.Name = "DoneList";
-            DoneList.Size = new Size(190, 418);
-            DoneList.TabIndex = 2;
-            DoneList.SelectedIndexChanged += DoneList_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -126,6 +116,16 @@
             testLabel.TabIndex = 8;
             testLabel.Text = "label4";
             // 
+            // DoneList
+            // 
+            DoneList.BackColor = Color.FromArgb(128, 64, 0);
+            DoneList.FormattingEnabled = true;
+            DoneList.Location = new Point(629, 101);
+            DoneList.Name = "DoneList";
+            DoneList.Size = new Size(190, 400);
+            DoneList.TabIndex = 2;
+            DoneList.SelectedIndexChanged += DoneList_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -153,12 +153,12 @@
 
         private CheckedListBox ToDoList;
         private CheckedListBox InProgressList;
-        private CheckedListBox DoneList;
         private Label label1;
         private Label label2;
         private Label label3;
         private TextBox textBox1;
         private Button AddButton;
         private Label testLabel;
+        private CheckedListBox DoneList;
     }
 }

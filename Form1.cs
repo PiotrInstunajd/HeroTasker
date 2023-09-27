@@ -10,26 +10,32 @@ namespace HeroTasker
             DoneList.CheckOnClick = true;
 
         }
-        public async void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
-            string[] toDo;
+            var list = new List<string>();
+            list.Add(textBox1.Text);
+
             ToDoList.Items.Add(textBox1.Text);
-            toDo = new string[] { textBox1.Text };
+            
 
             #region NotePad
             #endregion
         }
-        public async void ToDoList_SelectedIndexChanged(object sender, EventArgs e)
+        public void ToDoList_SelectedIndexChanged(object sender, EventArgs e)
         {
             InProgressList.Items.Add(ToDoList.SelectedItem);
-            ToDoList.Items.Remove();
+            ToDoList.Items.Remove(InProgressList.SelectedItem);
 
+                if (ToDoList.GetItemChecked(tasks))
+                    {
+                        ToDoList.Items.RemoveAt(tasks);
+                    }
 
             //if (checkedListBox1_SelectedIndexChanged)
             //{
             //    InProgressList.Items.Remove(checkedListBox1_SelectedIndexChanged);
             //}
-            
+
             //ToDoList.Items.Remove(ToDoList.SelectedItem);
             //InProgressList.Items.Remove(InProgressList.SelectedItem);
             #region NotePad
