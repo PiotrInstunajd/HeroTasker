@@ -11,17 +11,15 @@ namespace HeroTasker
         }
         public void button1_Click(object sender, EventArgs e)
         {
-            var list = new List<string>();
-            list.Add(textBox1.Text);
-
             ToDoList.Items.Add(textBox1.Text);
             #region NotePad
             #endregion
         }
         public void ToDoList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InProgressList.Items.Add(ToDoList.SelectedItem);
-            ToDoList.Items.Remove(InProgressList.SelectedItem);
+            string selectDo = ToDoList.GetItemText(ToDoList.SelectedItem);
+            InProgressList.Items.Add(selectDo);
+            ToDoList.Items.Remove(selectDo);
             #region NotePad
             //if (checkedListBox1_SelectedIndexChanged)
             //{
@@ -41,8 +39,9 @@ namespace HeroTasker
         }
         private void InProgressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DoneList.Items.Add(InProgressList.SelectedItem);
-            InProgressList.Items.Remove(InProgressList.SelectedItem);
+            string selectInProgress = InProgressList.GetItemText(InProgressList.SelectedItem);
+            DoneList.Items.Add(selectInProgress);
+            InProgressList.Items.Remove(selectInProgress);
             #region NotePad
             //ID[]=IDlistBox =>removeID[]
 

@@ -35,8 +35,8 @@
             label3 = new Label();
             textBox1 = new TextBox();
             AddButton = new Button();
-            testLabel = new Label();
             DoneList = new CheckedListBox();
+            label4 = new Label();
             SuspendLayout();
             // 
             // ToDoList
@@ -107,15 +107,6 @@
             AddButton.UseVisualStyleBackColor = true;
             AddButton.Click += button1_Click;
             // 
-            // testLabel
-            // 
-            testLabel.AutoSize = true;
-            testLabel.Location = new Point(277, 525);
-            testLabel.Name = "testLabel";
-            testLabel.Size = new Size(38, 15);
-            testLabel.TabIndex = 8;
-            testLabel.Text = "label4";
-            // 
             // DoneList
             // 
             DoneList.BackColor = Color.FromArgb(128, 64, 0);
@@ -126,6 +117,14 @@
             DoneList.TabIndex = 2;
             DoneList.SelectedIndexChanged += DoneList_SelectedIndexChanged;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(329, 41);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 15);
+            label4.TabIndex = 8;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -133,7 +132,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(117, 58, 19);
             ClientSize = new Size(831, 565);
-            Controls.Add(testLabel);
+            Controls.Add(label4);
             Controls.Add(AddButton);
             Controls.Add(textBox1);
             Controls.Add(label3);
@@ -158,7 +157,7 @@
         private Label label3;
         private TextBox textBox1;
         private Button AddButton;
-        private Label testLabel;
         private CheckedListBox DoneList;
+        private Label label4;
     }
 }
