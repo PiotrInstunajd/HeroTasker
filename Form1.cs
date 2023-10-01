@@ -8,6 +8,7 @@ namespace HeroTasker
             ToDoList.CheckOnClick = true;
             InProgressList.CheckOnClick = true;
             DoneList.CheckOnClick = true;
+
         }
         public void button1_Click(object sender, EventArgs e)
         {
@@ -42,6 +43,10 @@ namespace HeroTasker
             string selectInProgress = InProgressList.GetItemText(InProgressList.SelectedItem);
             DoneList.Items.Add(selectInProgress);
             InProgressList.Items.Remove(selectInProgress);
+            if (DoneList.Items.Count > DoneList.)
+            {
+                DoneList.SelectedIndex = 0;
+            }
             #region NotePad
             //ID[]=IDlistBox =>removeID[]
 
