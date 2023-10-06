@@ -1,3 +1,5 @@
+using System.CodeDom;
+
 namespace HeroTasker
 {
     public partial class Form1 : Form
@@ -8,70 +10,62 @@ namespace HeroTasker
             ToDoList.CheckOnClick = true;
             InProgressList.CheckOnClick = true;
             DoneList.CheckOnClick = true;
-
+            progressBar1.Maximum = 5;
+            progressBar1.Minimum = 0;
+            textBox1.Text = "Insert Task Here";
+            textBox1.ForeColor = System.Drawing.Color.Gray;
         }
         public void button1_Click(object sender, EventArgs e)
         {
-            ToDoList.Items.Add(textBox1.Text);
-            #region NotePad
-            #endregion
+            string? selectedTask = textBox1.Text;
+            if (string.IsNullOrEmpty(selectedTask))
+            {
+                errorProvider1.SetError(textBox1, "Task is required");
+            }
+            else
+            {
+                DateOnly date = DateOnly.FromDateTime(DateTime.Now);
+                ToDoList.Items.Add(selectedTask + $" {date}");
+            }
         }
         public void ToDoList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectDo = ToDoList.GetItemText(ToDoList.SelectedItem);
-            InProgressList.Items.Add(selectDo);
-            ToDoList.Items.Remove(selectDo);
-            #region NotePad
-            //if (checkedListBox1_SelectedIndexChanged)
-            //{
-            //    InProgressList.Items.Remove(checkedListBox1_SelectedIndexChanged);
-            //}
-
-            //ToDoList.Items.Remove(ToDoList.SelectedItem);
-            //InProgressList.Items.Remove(InProgressList.SelectedItem);
-
-            //ToDoList.GetItemChecked();
-            //this.BeginInvoke(new Action(() =>
-            //{
-            //    InProgressList.Items.Add(ToDoList.SelectedItem);
-
-            //}));
-            #endregion
+            if (ToDoList.Items.Count < 0)
+            {
+                errorProvider1.SetError(textBox1, "No tasks");
+            }
+            else
+            {
+                string? selectedDo = ToDoList.GetItemText(ToDoList.SelectedItem);
+                InProgressList.Items.Add(selectedDo);
+                ToDoList.Items.Remove(selectedDo);
+            }
         }
         private void InProgressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectInProgress = InProgressList.GetItemText(InProgressList.SelectedItem);
-            DoneList.Items.Add(selectInProgress);
-            InProgressList.Items.Remove(selectInProgress);
-            if (DoneList.Items.Count > DoneList.)
+            if (InProgressList.Items.Count < 0)
             {
-                DoneList.SelectedIndex = 0;
+                errorProvider1.SetError(textBox1, "No tasks");
             }
-            #region NotePad
-            //ID[]=IDlistBox =>removeID[]
-
-            //foreach (var item in InProgressList.Items)
-            //{
-            //    if (item.Equals(null))
-            //    {
-            //        InProgressList.Items.Remove(item);
-            //    }
-            //}
-
-            //checkedListBox3.Items.Add(this.checkedListBox2.Text);
-            #endregion
+            else
+            {
+                string? selectedInProgress = InProgressList.GetItemText(InProgressList.SelectedItem);
+                DoneList.Items.Add(selectedInProgress);
+                InProgressList.Items.Remove(selectedInProgress);
+            }
         }
         private void DoneList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            #region NotePad
-            #endregion
+            progressBar1.Value += 1;
+            if (progressBar1.Value == progressBar1.Maximum)
+            {
+                progressBar1.Value = 0;
+                progressBar1.Maximum += 2;
+            }
         }
         public void textBox1_TextChanged(object sender, EventArgs e)
         {
-            #region NotePad
-            #endregion
+            textBox1.ForeColor = System.Drawing.Color.Black;
         }
-
-
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             ToDoList = new CheckedListBox();
             InProgressList = new CheckedListBox();
             label1 = new Label();
@@ -36,7 +37,9 @@
             textBox1 = new TextBox();
             AddButton = new Button();
             DoneList = new CheckedListBox();
-            label4 = new Label();
+            progressBar1 = new ProgressBar();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // ToDoList
@@ -118,13 +121,16 @@
             DoneList.TabIndex = 2;
             DoneList.SelectedIndexChanged += DoneList_SelectedIndexChanged;
             // 
-            // label4
+            // progressBar1
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(329, 41);
-            label4.Name = "label4";
-            label4.Size = new Size(0, 15);
-            label4.TabIndex = 8;
+            progressBar1.Location = new Point(208, 27);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(415, 23);
+            progressBar1.TabIndex = 8;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
@@ -133,7 +139,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(117, 58, 19);
             ClientSize = new Size(831, 565);
-            Controls.Add(label4);
+            Controls.Add(progressBar1);
             Controls.Add(AddButton);
             Controls.Add(textBox1);
             Controls.Add(label3);
@@ -145,6 +151,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -159,6 +166,7 @@
         private TextBox textBox1;
         private Button AddButton;
         private CheckedListBox DoneList;
-        private Label label4;
+        private ProgressBar progressBar1;
+        private ErrorProvider errorProvider1;
     }
 }
