@@ -10,3 +10,8 @@ Done:
 
 Bug:
 - Double value from ToDoList to InProgressList
+
+Feature:
+- Goblin
+- XP
+- Outdated tasks
