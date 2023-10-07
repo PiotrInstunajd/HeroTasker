@@ -1,4 +1,6 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using System.CodeDom;
+using System.Security.Policy;
 
 namespace HeroTasker
 {
@@ -7,13 +9,6 @@ namespace HeroTasker
         public Form1()
         {
             InitializeComponent();
-            ToDoList.CheckOnClick = true;
-            InProgressList.CheckOnClick = true;
-            DoneList.CheckOnClick = true;
-            progressBar1.Maximum = 5;
-            progressBar1.Minimum = 0;
-            textBox1.Text = "Insert Task Here";
-            textBox1.ForeColor = System.Drawing.Color.Gray;
         }
         public void button1_Click(object sender, EventArgs e)
         {
@@ -57,6 +52,11 @@ namespace HeroTasker
         private void DoneList_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.Value += 1;
+            if (progressBar1.Value >= 3)
+            {
+                pictureBox1.Image.Dispose();
+                pictureBox1.Image = Image.FromFile(@"F:\\MVS Projects\\HeroTasker\\Enemy\\HURT_0001w2.png");
+            }
             if (progressBar1.Value == progressBar1.Maximum)
             {
                 progressBar1.Value = 0;

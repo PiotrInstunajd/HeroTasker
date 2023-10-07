@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             ToDoList = new CheckedListBox();
             InProgressList = new CheckedListBox();
             label1 = new Label();
@@ -39,12 +40,15 @@
             DoneList = new CheckedListBox();
             progressBar1 = new ProgressBar();
             errorProvider1 = new ErrorProvider(components);
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // ToDoList
             // 
             ToDoList.BackColor = Color.FromArgb(128, 64, 0);
+            ToDoList.CheckOnClick = true;
             ToDoList.FormattingEnabled = true;
             ToDoList.Location = new Point(12, 101);
             ToDoList.Name = "ToDoList";
@@ -55,6 +59,7 @@
             // InProgressList
             // 
             InProgressList.BackColor = Color.FromArgb(128, 64, 0);
+            InProgressList.CheckOnClick = true;
             InProgressList.FormattingEnabled = true;
             InProgressList.Location = new Point(208, 101);
             InProgressList.Name = "InProgressList";
@@ -94,10 +99,12 @@
             // 
             // textBox1
             // 
+            textBox1.ForeColor = Color.Gray;
             textBox1.Location = new Point(91, 530);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 6;
+            textBox1.Text = "Insert Task Here";
             textBox1.TextChanged += textBox1_TextChanged;
             textBox1.KeyDown += textBox1_TextChanged;
             // 
@@ -114,6 +121,7 @@
             // DoneList
             // 
             DoneList.BackColor = Color.FromArgb(128, 64, 0);
+            DoneList.CheckOnClick = true;
             DoneList.FormattingEnabled = true;
             DoneList.Location = new Point(629, 101);
             DoneList.Name = "DoneList";
@@ -123,7 +131,8 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(208, 27);
+            progressBar1.Location = new Point(12, 12);
+            progressBar1.Maximum = 5;
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(415, 23);
             progressBar1.TabIndex = 8;
@@ -132,6 +141,15 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(433, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(103, 83);
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -139,6 +157,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(117, 58, 19);
             ClientSize = new Size(831, 565);
+            Controls.Add(pictureBox1);
             Controls.Add(progressBar1);
             Controls.Add(AddButton);
             Controls.Add(textBox1);
@@ -152,6 +171,7 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -168,5 +188,6 @@
         private CheckedListBox DoneList;
         private ProgressBar progressBar1;
         private ErrorProvider errorProvider1;
+        private PictureBox pictureBox1;
     }
 }
