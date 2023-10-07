@@ -41,6 +41,7 @@
             progressBar1 = new ProgressBar();
             errorProvider1 = new ErrorProvider(components);
             pictureBox1 = new PictureBox();
+            XP = new Label();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -131,10 +132,11 @@
             // 
             // progressBar1
             // 
+            progressBar1.BackColor = Color.White;
             progressBar1.Location = new Point(12, 12);
             progressBar1.Maximum = 5;
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(415, 23);
+            progressBar1.Size = new Size(415, 28);
             progressBar1.TabIndex = 8;
             // 
             // errorProvider1
@@ -150,6 +152,16 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
+            // XP
+            // 
+            XP.AutoSize = true;
+            XP.BackColor = Color.Transparent;
+            XP.Font = new Font("Stencil", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            XP.Location = new Point(353, 43);
+            XP.Name = "XP";
+            XP.Size = new Size(74, 25);
+            XP.TabIndex = 10;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -157,6 +169,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(117, 58, 19);
             ClientSize = new Size(831, 565);
+            Controls.Add(XP);
             Controls.Add(pictureBox1);
             Controls.Add(progressBar1);
             Controls.Add(AddButton);
@@ -189,5 +202,6 @@
         private ProgressBar progressBar1;
         private ErrorProvider errorProvider1;
         private PictureBox pictureBox1;
+        private Label XP;
     }
 }

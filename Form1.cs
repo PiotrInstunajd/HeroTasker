@@ -52,6 +52,7 @@ namespace HeroTasker
         private void DoneList_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.Value += 1;
+            XP.Text = $"XP {progressBar1.Value}/{progressBar1.Maximum}";
             if (progressBar1.Value >= 3)
             {
                 pictureBox1.Image.Dispose();
