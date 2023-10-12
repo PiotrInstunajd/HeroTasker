@@ -31,9 +31,7 @@ namespace HeroTasker.Properties {
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-
-        public static object HURT_0001w2 { get; internal set; }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -59,6 +57,16 @@ namespace HeroTasker.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BackBasic {
+            get {
+                object obj = ResourceManager.GetObject("BackBasic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
