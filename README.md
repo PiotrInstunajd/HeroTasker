@@ -2,15 +2,21 @@
 
 #TaskManager
 
-Done:
-- ProgressBar
-- Date next to task
-- Errors
-- Basic Functionality
+Just basic ToDo application to manage our tasks. Special graphics and features as this app is related to gaming community.
 
 Bug:
 - Double value from ToDoList to InProgressList
 
-Feature:
-- XP
-- Outdated tasks
+Features:
+- Settings 
+- Rewards
+- Updated XP system
+- Calendar & Outdated tasks
+
+Done: 
+- Motivation Quotes
+- ToDo/InProgress/DoneLists
+- XP System
+- Different Enemies
+- Errors
+- Add tasks and dates
