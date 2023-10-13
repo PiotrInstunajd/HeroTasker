@@ -43,35 +43,37 @@
             pictureBox1 = new PictureBox();
             XP = new Label();
             ArchiveList = new CheckedListBox();
+            pictureBox2 = new PictureBox();
+            MotivationL = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // ToDoList
             // 
             ToDoList.BackColor = Color.Black;
-            ToDoList.BorderStyle = BorderStyle.FixedSingle;
             ToDoList.CheckOnClick = true;
             ToDoList.Font = new Font("Viner Hand ITC", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ToDoList.ForeColor = Color.White;
             ToDoList.FormattingEnabled = true;
             ToDoList.Location = new Point(12, 156);
             ToDoList.Name = "ToDoList";
-            ToDoList.Size = new Size(190, 393);
+            ToDoList.Size = new Size(190, 395);
             ToDoList.TabIndex = 0;
             ToDoList.SelectedIndexChanged += ToDoList_SelectedIndexChanged;
             // 
             // InProgressList
             // 
             InProgressList.BackColor = SystemColors.InfoText;
-            InProgressList.BorderStyle = BorderStyle.FixedSingle;
             InProgressList.CheckOnClick = true;
             InProgressList.Font = new Font("Viner Hand ITC", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             InProgressList.ForeColor = Color.White;
             InProgressList.FormattingEnabled = true;
             InProgressList.Location = new Point(208, 156);
             InProgressList.Name = "InProgressList";
-            InProgressList.Size = new Size(199, 393);
+            InProgressList.Size = new Size(199, 395);
             InProgressList.TabIndex = 1;
             InProgressList.SelectedIndexChanged += InProgressList_SelectedIndexChanged;
             // 
@@ -114,7 +116,7 @@
             // textBox1
             // 
             textBox1.ForeColor = Color.Gray;
-            textBox1.Location = new Point(93, 46);
+            textBox1.Location = new Point(57, 46);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 6;
@@ -124,9 +126,10 @@
             // 
             // AddButton
             // 
+            AddButton.Font = new Font("Viner Hand ITC", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             AddButton.Location = new Point(12, 46);
             AddButton.Name = "AddButton";
-            AddButton.Size = new Size(75, 23);
+            AddButton.Size = new Size(39, 23);
             AddButton.TabIndex = 7;
             AddButton.Text = "+";
             AddButton.UseVisualStyleBackColor = true;
@@ -135,20 +138,20 @@
             // DoneList
             // 
             DoneList.BackColor = Color.Black;
-            DoneList.BorderStyle = BorderStyle.FixedSingle;
             DoneList.CheckOnClick = true;
             DoneList.Font = new Font("Viner Hand ITC", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             DoneList.ForeColor = Color.White;
             DoneList.FormattingEnabled = true;
             DoneList.Location = new Point(413, 156);
             DoneList.Name = "DoneList";
-            DoneList.Size = new Size(190, 255);
+            DoneList.Size = new Size(190, 257);
             DoneList.TabIndex = 2;
             DoneList.SelectedIndexChanged += DoneList_SelectedIndexChanged;
             // 
             // progressBar1
             // 
             progressBar1.BackColor = Color.White;
+            progressBar1.ForeColor = SystemColors.Info;
             progressBar1.Location = new Point(12, 12);
             progressBar1.Maximum = 5;
             progressBar1.Name = "progressBar1";
@@ -162,8 +165,9 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(433, 12);
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = Properties.Resources.Crap;
+            pictureBox1.Location = new Point(444, -1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(103, 83);
             pictureBox1.TabIndex = 9;
@@ -182,14 +186,42 @@
             // ArchiveList
             // 
             ArchiveList.BackColor = Color.Black;
-            ArchiveList.BorderStyle = BorderStyle.FixedSingle;
             ArchiveList.Font = new Font("Viner Hand ITC", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ArchiveList.ForeColor = Color.White;
             ArchiveList.FormattingEnabled = true;
             ArchiveList.Location = new Point(413, 432);
             ArchiveList.Name = "ArchiveList";
-            ArchiveList.Size = new Size(190, 117);
+            ArchiveList.Size = new Size(190, 119);
             ArchiveList.TabIndex = 11;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.ErrorImage = Properties.Resources.XwI4;
+            pictureBox2.Image = Properties.Resources.XwI4;
+            pictureBox2.Location = new Point(609, 349);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(210, 200);
+            pictureBox2.TabIndex = 12;
+            pictureBox2.TabStop = false;
+            // 
+            // MotivationL
+            // 
+            MotivationL.BackColor = Color.Transparent;
+            MotivationL.Font = new Font("Viner Hand ITC", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MotivationL.ForeColor = Color.White;
+            MotivationL.ImageAlign = ContentAlignment.BottomLeft;
+            MotivationL.Location = new Point(609, 241);
+            MotivationL.Name = "MotivationL";
+            MotivationL.Size = new Size(122, 105);
+            MotivationL.TabIndex = 13;
+            MotivationL.TextAlign = ContentAlignment.BottomRight;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 5000;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -198,6 +230,8 @@
             BackColor = Color.White;
             BackgroundImage = Properties.Resources.BackBasic;
             ClientSize = new Size(831, 565);
+            Controls.Add(MotivationL);
+            Controls.Add(pictureBox2);
             Controls.Add(ArchiveList);
             Controls.Add(XP);
             Controls.Add(pictureBox1);
@@ -211,10 +245,13 @@
             Controls.Add(InProgressList);
             Controls.Add(ToDoList);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -234,5 +271,8 @@
         private PictureBox pictureBox1;
         private Label XP;
         private CheckedListBox ArchiveList;
+        private PictureBox pictureBox2;
+        private Label MotivationL;
+        private System.Windows.Forms.Timer timer1;
     }
 }
