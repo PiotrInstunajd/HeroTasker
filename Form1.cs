@@ -66,7 +66,7 @@ namespace HeroTasker
             {
                 progressBar1.Value = 0;
                 progressBar1.Maximum += 2;
-                var files = Directory.GetFiles("F:\\MVS Projects\\HeroTasker\\Enemy", "*.gif");
+                var files = Directory.GetFiles("F:\\MVS Projects\\HeroTasker\\Sprites\\Enemy", "*.gif");
                 pictureBox1.ImageLocation = files[rand.Next(files.Length)];
             }
             //if (DoneList.Items.Contains(date.CompareTo(DateTime.Now) < 1))
