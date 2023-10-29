@@ -11,12 +11,22 @@ namespace HeroTasker
         public Form1()
         {
             InitializeComponent();
+            List<Bitmap> Back = new List<Bitmap>();
+            Bitmap BackBasic = new Bitmap(@"F:\\MVS Projects\\HeroTasker\\Sprites\\Backgrounds\\BackBasic.png", true);
+            Bitmap First = new Bitmap(@"F:\\MVS Projects\\HeroTasker\\Sprites\\Backgrounds\\First.png", true);
+            Bitmap Second = new Bitmap(@"F:\\MVS Projects\\HeroTasker\\Sprites\\Backgrounds\\Second.png", true);
+
+            Back.Add(BackBasic);
+            Back.Add(First);
+            Back.Add(Second);
+            listBox1.DataSource = Back;
         }
         public DateOnly date = DateOnly.FromDateTime(DateTime.Now);
         public Random rand = new Random();
+
         public void button1_Click(object sender, EventArgs e)
         {
-            //Add task to ToDoList
+            //Add task to ToDoList + error when empty value
             string? selectedTask = textBox1.Text;
             if (string.IsNullOrEmpty(selectedTask))
             {
@@ -32,8 +42,8 @@ namespace HeroTasker
             //Add task to InProgressList and remove from ToDoList
             //Additional error 
             string? selectedDo = ToDoList.GetItemText(ToDoList.SelectedItem);
-            ToDoList.Items.Remove(selectedDo);
-            InProgressList.Items.Add(selectedDo);
+            ToDoList.Items.Remove(selectedDo!);
+            InProgressList.Items.Add(selectedDo!);
         }
         private void InProgressList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -46,8 +56,8 @@ namespace HeroTasker
             else
             {
                 string? selectedInProgress = InProgressList.GetItemText(InProgressList.SelectedItem);
-                DoneList.Items.Add(selectedInProgress);
-                InProgressList.Items.Remove(selectedInProgress);
+                DoneList.Items.Add(selectedInProgress!);
+                InProgressList.Items.Remove(selectedInProgress!);
             }
         }
         private void DoneList_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,8 +67,8 @@ namespace HeroTasker
             //Raise value in progressBar depends on amount of tasks checked
             //Changes of gif after reach maxValue
             string? selectedDoneList = DoneList.GetItemText(DoneList.SelectedItem);
-            ArchiveList.Items.Add(selectedDoneList);
-            DoneList.Items.Remove(selectedDoneList);
+            ArchiveList.Items.Add(selectedDoneList!);
+            DoneList.Items.Remove(selectedDoneList!);
             progressBar1.Value += 1;
             progressBar1.ForeColor = Color.Crimson;
             XP.Text = $"XP {progressBar1.Value}/{progressBar1.Maximum}";
@@ -78,11 +88,26 @@ namespace HeroTasker
         {
             textBox1.ForeColor = System.Drawing.Color.Black;
         }
-
+        public void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //Change of motivationalQuotes by every 5s
             string[] motivQuote = { "Just roll", "Always is a good moment for estus", "Everybody can drop soul", "Your allies are your souls", "Heavier it is harder it hits" };
             MotivationL.Text = motivQuote[rand.Next(motivQuote.Length)];
         }
+        private void SettingsB_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            DialogResult dialogresult = settings.ShowDialog();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BackgroundImage = listBox1.SelectedItem as Bitmap;
+        }
     }
+
 }

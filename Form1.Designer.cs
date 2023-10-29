@@ -46,6 +46,8 @@
             pictureBox2 = new PictureBox();
             MotivationL = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            SettingsB = new Button();
+            listBox1 = new ListBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -121,6 +123,7 @@
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 6;
             textBox1.Text = "Insert Task Here";
+            textBox1.Click += textBox1_Click;
             textBox1.TextChanged += textBox1_TextChanged;
             textBox1.KeyDown += textBox1_TextChanged;
             // 
@@ -223,6 +226,30 @@
             timer1.Interval = 5000;
             timer1.Tick += timer1_Tick;
             // 
+            // SettingsB
+            // 
+            SettingsB.Font = new Font("Viner Hand ITC", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SettingsB.Location = new Point(731, 7);
+            SettingsB.Name = "SettingsB";
+            SettingsB.Size = new Size(88, 33);
+            SettingsB.TabIndex = 14;
+            SettingsB.Text = "Settings";
+            SettingsB.UseVisualStyleBackColor = true;
+            SettingsB.Click += SettingsB_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.BackColor = SystemColors.MenuText;
+            listBox1.Font = new Font("Viner Hand ITC", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            listBox1.ForeColor = Color.Transparent;
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 18;
+            listBox1.Location = new Point(718, 156);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(101, 58);
+            listBox1.TabIndex = 15;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -230,6 +257,8 @@
             BackColor = Color.White;
             BackgroundImage = Properties.Resources.BackBasic;
             ClientSize = new Size(831, 565);
+            Controls.Add(listBox1);
+            Controls.Add(SettingsB);
             Controls.Add(MotivationL);
             Controls.Add(pictureBox2);
             Controls.Add(ArchiveList);
@@ -274,5 +303,7 @@
         private PictureBox pictureBox2;
         private Label MotivationL;
         private System.Windows.Forms.Timer timer1;
+        private Button SettingsB;
+        private ListBox listBox1;
     }
 }
