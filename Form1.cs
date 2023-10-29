@@ -21,6 +21,7 @@ namespace HeroTasker
             Back.Add(Second);
             listBox1.DataSource = Back;
         }
+        
         public DateOnly date = DateOnly.FromDateTime(DateTime.Now);
         public Random rand = new Random();
 
@@ -79,10 +80,6 @@ namespace HeroTasker
                 var files = Directory.GetFiles("F:\\MVS Projects\\HeroTasker\\Sprites\\Enemy", "*.gif");
                 pictureBox1.ImageLocation = files[rand.Next(files.Length)];
             }
-            //if (DoneList.Items.Contains(date.CompareTo(DateTime.Now) < 1))
-            //{
-            //    ArchiveList.Items.Add(CheckState.Checked);
-            //}
         }
         public void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -90,6 +87,7 @@ namespace HeroTasker
         }
         public void textBox1_Click(object sender, EventArgs e)
         {
+            //Clear textbox after click on it
             textBox1.Clear();
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -100,12 +98,14 @@ namespace HeroTasker
         }
         private void SettingsB_Click(object sender, EventArgs e)
         {
+            //Showing additional form of settings
             Settings settings = new Settings();
             DialogResult dialogresult = settings.ShowDialog();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Change of background 
             BackgroundImage = listBox1.SelectedItem as Bitmap;
         }
     }
