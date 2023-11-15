@@ -1,19 +1,21 @@
 # HeroTasker
 
-#TaskManager
+## TaskManager
 
-Just basic ToDo application to manage our tasks. Special graphics and features as this app is related to gaming community.
+Just basic ToDo application to manage our tasks. Special graphics and features as this app is related to gaming community. Working currently on mobile app with additional features.
 
-Bug:
+
+
+## Bug:
 - Double value from ToDoList to InProgressList
 
-Features:
+## Features:
 - Settings 
 - Rewards
 - Updated XP system
 - Calendar & Outdated tasks
 
-Done: 
+## Done: 
 - Motivation Quotes
 - ToDo/InProgress/DoneLists
 - XP System
