@@ -7,8 +7,6 @@ Just basic ToDo application to manage our tasks. Special graphics and features a
 ## Installation
 **Run project in Microsoft Visual Studio**
 
-Just basic ToDo application to manage our tasks. Special graphics and features as this app is related to gaming community. Working currently on mobile app with additional features.
-
 ## Bug:
 - Double value from ToDoList to InProgressList
 
